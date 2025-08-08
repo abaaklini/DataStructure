@@ -36,8 +36,7 @@ class UnsortedStaticArray(StaticArray):
 
   def insert(self, value):
     if self.last < self._size:
-      StaticArray.__setitem__(self, self.last, value)
-      # self._array[self.last] = value
+      self._array[self.last] = value
       self.last += 1
     else:
       raise ValueError('The array is already full')
