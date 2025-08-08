@@ -76,10 +76,6 @@ class SortedStaticArray(UnsortedStaticArray):
     self._array[0] = value
     self.last += 1
 
-
-  def __setitem__(self, _, value):
-    self.insert(value)
-
   def __delitem__(self, index):
     if self.last == 0:
       raise ValueError('Delete from an empty array')
@@ -90,7 +86,6 @@ class SortedStaticArray(UnsortedStaticArray):
         self._array[i] = self._array[i + 1]
       self._array[self.last - 1] = 0
       self.last -= 1
-
 
   def find(self, target):
     left = 0
